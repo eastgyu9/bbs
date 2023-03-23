@@ -13,7 +13,7 @@
 
 - View: JSP
 
-- WAS: Tomcat 9
+- WAS: Tomcat 9.0.71
 
 ### 주요 기능 
 

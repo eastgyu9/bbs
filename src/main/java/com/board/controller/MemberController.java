@@ -1,5 +1,7 @@
 package com.board.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,5 +37,23 @@ public class MemberController {
 		} else {
 			return "joinMember";
 		}
-	} 
+	}
+	
+	@GetMapping("/login")
+	public String loginForm() {
+		return "login";
+	}
+	
+	@PostMapping("/login")
+	public String login(@ModelAttribute Member member, HttpSession session) {
+		boolean loginResult = memberService.login(member);
+		if (loginResult) {
+			// 로그인 시 해당 유저의 정보가 유지되어야 한다. session 이용
+			session.setAttribute("loginEmail", member.getMemberEmail());
+			return "index";
+		} else {
+			return "login";
+		}
+		
+	}
 }
