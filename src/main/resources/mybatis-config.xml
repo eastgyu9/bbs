@@ -3,9 +3,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-	<!-- mapper.xml에서 parameterType/ resultType을 전체 경로가 아닌 별칭으로 사용할 수 있다. -->
+	<!-- mapper.xml에서 parameterType/ resultType에 작성할 클래스의 전체 경로를 줄여서 별칭으로 사용할 수 있다. -->
     <typeAliases>
-        <typeAlias type="com.board.domain.Member" alias="member"></typeAlias>
+        <typeAlias type="com.board.domain.MemberVO" alias="MemberVO"></typeAlias>
     </typeAliases>
     
 </configuration>

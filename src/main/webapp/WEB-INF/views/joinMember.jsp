@@ -1,9 +1,8 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<html>
-<head>
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+
+<%@ include file="include/header.jsp" %>
 	<title>회원가입</title>
-</head>
-<body>
+	
     <form action="/member/join" method="post">
         이메일:&nbsp;<input type="text" name="memberEmail" id="memberEmail" onblur="emailCheck()" placeholder="이메일">
         <p id="check-result"></p>

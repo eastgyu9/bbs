@@ -12,8 +12,13 @@
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+		<listener-class>com.board.util.MySessionListener</listener-class>
 	</listener>
-
+	
+	<session-config>
+  	  	<session-timeout>30</session-timeout> <!-- 세션 만료 시간(분) -->
+	</session-config>
+	
 	<!-- Processes application requests -->
 	<servlet>
 		<servlet-name>appServlet</servlet-name>
